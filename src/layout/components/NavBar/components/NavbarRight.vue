@@ -2,20 +2,20 @@
   <div class="flex">
     <template v-if="!isMobile">
       <!--全屏 -->
-      <div class="setting-item" @click="toggle">
+      <!-- <div class="setting-item" @click="toggle">
         <svg-icon
           :icon-class="isFullscreen ? 'fullscreen-exit' : 'fullscreen'"
         />
-      </div>
+      </div> -->
 
       <!-- 布局大小 -->
-      <el-tooltip
+      <!-- <el-tooltip
         :content="$t('sizeSelect.tooltip')"
         effect="dark"
         placement="bottom"
       >
         <size-select class="setting-item" />
-      </el-tooltip>
+      </el-tooltip> -->
 
       <!-- 语言选择 -->
       <lang-select class="setting-item" />
@@ -32,16 +32,7 @@
       </div>
       <template #dropdown>
         <el-dropdown-menu>
-          <a
-            target="_blank"
-            href="https://gitee.com/youlaiorg/vue3-element-admin"
-          >
-            <el-dropdown-item>{{ $t("navbar.gitee") }}</el-dropdown-item>
-          </a>
-          <a target="_blank" href="https://juejin.cn/post/7228990409909108793">
-            <el-dropdown-item>{{ $t("navbar.document") }}</el-dropdown-item>
-          </a>
-          <el-dropdown-item divided @click="logout">
+          <el-dropdown-item @click="logout">
             {{ $t("navbar.logout") }}
           </el-dropdown-item>
         </el-dropdown-menu>
@@ -49,11 +40,11 @@
     </el-dropdown>
 
     <!-- 设置 -->
-    <template v-if="defaultSettings.showSettings">
+    <!-- <template v-if="defaultSettings.showSettings">
       <div class="setting-item" @click="settingStore.settingsVisible = true">
         <svg-icon icon-class="setting" />
       </div>
-    </template>
+    </template> -->
   </div>
 </template>
 <script setup lang="ts">

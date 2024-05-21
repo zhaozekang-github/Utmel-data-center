@@ -11,7 +11,7 @@
     <Sidebar class="sidebar-container" />
 
     <!-- 混合布局 -->
-    <div v-if="layout === LayoutEnum.MIX" class="mix-container">
+    <!-- <div v-if="layout === LayoutEnum.MIX" class="mix-container">
       <div class="mix-container__left">
         <SidebarMenu :menu-list="mixLeftMenus" :base-path="activeTopMenuPath" />
         <div class="sidebar-toggle">
@@ -29,16 +29,16 @@
         <AppMain />
         <Settings v-if="defaultSettings.showSettings" />
       </div>
-    </div>
+    </div> -->
 
     <!-- 左侧和顶部布局 -->
-    <div v-else :class="{ hasTagsView: showTagsView }" class="main-container">
+    <div :class="{ hasTagsView: showTagsView }" class="main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
         <NavBar v-if="layout === 'left'" />
         <TagsView v-if="showTagsView" />
       </div>
       <AppMain />
-      <Settings v-if="defaultSettings.showSettings" />
+      <!-- <Settings v-if="defaultSettings.showSettings" /> -->
     </div>
   </div>
 </template>
@@ -58,7 +58,8 @@ const WIDTH_DESKTOP = 992; // 响应式布局容器固定宽度  大屏（>=1200
 const isMobile = computed(() => appStore.device === DeviceEnum.MOBILE);
 const isOpenSidebar = computed(() => appStore.sidebar.opened);
 const fixedHeader = computed(() => settingsStore.fixedHeader); // 是否固定header
-const showTagsView = computed(() => settingsStore.tagsView); // 是否显示tagsView
+// const showTagsView = computed(() => settingsStore.tagsView); // 是否显示tagsView
+const showTagsView = true; // 是否显示tagsView
 const layout = computed(() => settingsStore.layout); // 布局模式 left top mix
 const activeTopMenuPath = computed(() => appStore.activeTopMenuPath); // 顶部菜单激活path
 const mixLeftMenus = computed(() => permissionStore.mixLeftMenus); // 混合布局左侧菜单

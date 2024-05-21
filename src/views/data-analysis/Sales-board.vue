@@ -13,4 +13,4 @@
 import PieChart from "@/components/Charts/PieChart.vue";
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

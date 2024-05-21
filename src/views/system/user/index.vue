@@ -1,14 +1,14 @@
+<!--
+ * @Author: ZZK
+ * @Date: 2024-05-16 09:37:09
+ * @Description: 
+-->
 <!-- 用户管理 -->
 <template>
   <div class="app-container">
     <el-row :gutter="20">
-      <!-- 部门树 -->
-      <el-col :lg="4" :xs="24" class="mb-[12px]">
-        <dept-tree v-model="queryParams.deptId" @node-click="handleQuery" />
-      </el-col>
-
       <!-- 用户列表 -->
-      <el-col :lg="20" :xs="24">
+      <el-col :lg="24" :xs="24">
         <div class="search-container">
           <el-form ref="queryFormRef" :model="queryParams" :inline="true">
             <el-form-item label="关键字" prop="keywords">
@@ -333,7 +333,6 @@ defineOptions({
 });
 
 import UserAPI from "@/api/user";
-import DeptAPI from "@/api/dept";
 import RoleAPI from "@/api/role";
 
 import { UserForm, UserQuery, UserPageVO } from "@/api/user/model";
@@ -464,11 +463,7 @@ async function loadRoleOptions() {
 }
 
 /** 加载部门下拉数据源 */
-async function loadDeptOptions() {
-  DeptAPI.getOptions().then((data) => {
-    deptList.value = data;
-  });
-}
+async function loadDeptOptions() {}
 
 /**
  * 打开弹窗

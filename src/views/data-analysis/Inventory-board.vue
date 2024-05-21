@@ -13,7 +13,7 @@
 import BarChart from "@/components/Charts/BarChart.vue";
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .inventory-board {
   padding: 15px;
 }

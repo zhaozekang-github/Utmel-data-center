@@ -13,4 +13,4 @@
 import RadarChart from '@/components/Charts/RadarChart.vue';
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

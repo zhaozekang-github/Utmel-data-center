@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-container">
     <!-- github角标 -->
-    <github-corner class="github-corner" />
+    <!-- <github-corner class="github-corner" /> -->
 
     <el-card shadow="never">
       <el-row justify="space-between">

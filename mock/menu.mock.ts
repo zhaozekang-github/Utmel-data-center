@@ -10,7 +10,7 @@ export default defineMock([
         {
           path: "/data-manage",
           component: "Layout",
-          redirect: "/data-manage",
+          redirect: "/",
           name: "/data-manage",
           meta: {
             title: "数据管理",
@@ -44,9 +44,9 @@ export default defineMock([
               },
             },
             {
-              path: "detail",
+              path: "Supplierdetail",
               component: "data-manage/Supplier/detail",
-              name: "Detail",
+              name: "Supplierdetail",
               meta: {
                 title: "供应商详情",
                 icon: "user",
@@ -65,6 +65,18 @@ export default defineMock([
                 hidden: false,
                 roles: ["ADMIN"],
                 keepAlive: true,
+              },
+            },
+            {
+              path: "Modeldetail",
+              component: "data-manage/Model/detail",
+              name: "Modeldetail",
+              meta: {
+                title: "型号详情",
+                icon: "user",
+                hidden: true,
+                roles: ["ADMIN"],
+                keepAlive: false,
               },
             },
           ],

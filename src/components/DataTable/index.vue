@@ -79,7 +79,13 @@
       </el-form-item>
     </el-form>
     <!-- 列表 -->
-    <el-button class="addbtn" type="primary" icon="Apple" @click="handlePopAdd">
+    <el-button
+      v-if="hasAdd"
+      class="addbtn"
+      type="primary"
+      icon="Apple"
+      @click="handlePopAdd"
+    >
       添加
     </el-button>
     <el-table
@@ -172,8 +178,11 @@ export interface ISelectConfig<T = any> {
 const props = withDefaults(
   defineProps<{
     tableConfig: ISelectConfig;
+    hasAdd: boolean;
   }>(),
-  {}
+  {
+    hasAdd: false,
+  }
 );
 
 // 自定义事件
